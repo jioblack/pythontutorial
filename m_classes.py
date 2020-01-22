@@ -1,4 +1,14 @@
 """
+Object Oriented Programming (OOP) is a programming paradigm based on the concept of "objects"
+which can contain data in the form of fileds/variables, and code in the form of procedures/methods/functions.
+OOP contain four basic concept:
+    1. Encapsulation
+    2. Polymorphism
+    3. Abstraction
+    4. Inheritance
+and makes use of Classes as blueprint on which objects are built
+"""
+"""
 Classes allow for the creation of user defined data types. They act as a blue print for our objects.
 Classes contain: variable aka instance variable
                  methods aka instance method
