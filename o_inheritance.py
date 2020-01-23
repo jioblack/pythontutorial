@@ -40,5 +40,5 @@ cr = Car(True,"Toyota Camry", 2018, 846783)
 
 bu = Bus(False, "Toyota Haice", 2015, 513630)
 
-print(cr.start)
+print(cr.start())
 print(bu.start())

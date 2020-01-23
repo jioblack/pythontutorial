@@ -62,4 +62,21 @@ flg2.startEngine()
         been passed. For example passing numbers result in addition, passing strings result in
         concatenation, passing lists result in joining both list etc.
 """
-#Runtime Polymorphism
+
+""""Runtime Polymorphism:
+        Aka dynamic method dispatch is a process in which a call to an overridden method is resolved
+        at runtime rather than at compile-time. The determination of the object to be called is based
+        on the object being referred to by the reference variable
+"""
+#In this example, toyota is used to represent both Car object and Bus object.
+import o_inheritance as i
+
+toyota=i.Car(True,"Camry",2018,897647)
+print(toyota.model)
+print(toyota.year)
+print(toyota.vin)
+
+toyota=i.Bus(True,"Haice",2014,457847)
+print(toyota.model)
+print(toyota.year)
+print(toyota.vin)
