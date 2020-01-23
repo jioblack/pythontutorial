@@ -54,3 +54,14 @@ print(myCourse.getPrice())
 #Python private variables are stored as: _ClassName__variableName
 print(myCourse._Courses__name)
 
+"""Note:
+        Python variables can be made private either with single underscore(_) which is weakly private
+        or double underscore(__) which is strongly private.
+        Single underscored variable signals that they are private and shouldn't be used by external code.
+        However it is only a convection and those not stop external code from accessing them. It however,
+        prevents such variables from being imported ("from module_name import *" wont import such variables.
+        Double underscored variable signals a strongly private method. This causes such variable/method to
+        be mangled, which means that they can't be accessed from outside the class. In reality such variable
+        can still be accessed using: _ClassName__variableName
+
+"""
