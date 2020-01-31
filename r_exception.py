@@ -36,3 +36,12 @@ even = int(input("Enter an even number:"))
 #If the input value does not satisfy the assert i.e. if it isn't even, an AssertError is raised
 assert even % 2 == 0, print(
     "You entered an odd number, you need to enter an even number")
+
+#Tip: You can wrap the assertion using a try except block for better error handling
+try:
+    even = int(input("Enter an odd number:"))
+    assert even % 2 != 0, print(
+        "You entered an even number, you need to enter an odd number")
+
+except AssertionError as output:
+    print(output)
