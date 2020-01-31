@@ -3,7 +3,7 @@
 """
 try:
     # Code to test for exception
-    a, b = [int(x) for x in input("Enter two numbers:").split()]
+    a, b = [float(x) for x in input("Enter two numbers:").split()]
     c = a / b
     print(c)
 except:
@@ -30,3 +30,9 @@ Note: The log level i.e. level=logging.xxxx determines which logging type is sho
       log level DEBUG shows all logs from Debug to Critical
 
 """
+
+#Assertion can also be used to handle errors. The example below shows how
+even = int(input("Enter an even number:"))
+#If the input value does not satisfy the assert i.e. if it isn't even, an AssertError is raised
+assert even % 2 == 0, print(
+    "You entered an odd number, you need to enter an even number")
