@@ -3,17 +3,24 @@
     operations on strings, or for input validation.
     The 're' module in python is used to perform regular expression. The module contain
     methods such as: match(), search(), findall(), split() and sub().
-    Regular Expression are made up of Sequence characters. Each character starts with a backslash.
+    Regular Expression can be made up of Sequence, Anchors, special characters and quantifiers.
+    Each sequence and anchor character starts with a backslash.
 
-    1. \d ===> This stands for any digit [0-9]. It matches a single character in a string.
+    Sequence characters represent a single character in a string. e.g.
+
+    1. \d ===> This stands for any digit [0-9].
     2. \D ===> This represents the opposite of \d i.e. any non digit character.
-    3. \s ===> This represents a whitespace in a string
+    3. \s ===> This represents a whitespace in a string (spaces, tabs & newline)
     4. \S ===> Represents a no whitespace
     5. \w ===> Represents any alphanumeric character i.e. letters or numbers.
     6. \W ===> Opposite of \w
-    7. \b ===> Around a word
-    8. \A ===> Matches only at the start of a string
-    9. \Z ===> Matches only at the end of the string
+
+Anchor Chracters: Don't actually match characters but position before or after a string. e.g.
+
+    7. \b ===> Around a word (Word boundary)
+    8. \B ===> Not a word boundary
+    8. \A or ^ ===> Matches only at the start of a string
+    9. \Z or $ ===> Matches only at the end of the string
 """
 
 import re
@@ -43,18 +50,15 @@ print(splitword)
 """
     Quantifiers are used to match multiple characters in a regular expression.
     e.g.
-    + ===> Specifies one or more repetition of the preceding regular expression. e.g. '\d+' means
-            one or more digits.
+    + ===> Specifies 1 or more characters to match e.g. \d+ means 1 or more digits
 
-    * ===> Specifies zero or more repetition of the preceding regular expression e.g. '\d*' means
-            zero or more digits.
+    * ===> Specifies 0 or more characters to match e.g. \d* means 0 or more digits
 
-    ? ===> Specifies zero or one repetition of the preceding regular expression
+    ? ===> Specifies 0 or 1 characters to match e.g. \w? means 0 or 1 alphanumeric character
 
-    {2} ===> Specifies exactly two occurrences of the preceding regular expression. You can change
-                the number within the curly brackets.
+    {2} ===> Specifies exactly number of occurrences (in curly braces) to match. 
 
-    {2,4} ===> Specifies minimum of two and maximum of 4 occurrences in the regular expression.
+    {2,4} ===> Specifies range of numbers (minimum and maximum) occurrences in the regular expression.
 """
 
 oneORmore = re.findall(r'b\w+', string)
@@ -86,7 +90,8 @@ print(ourdate)
 
         $ ===> Match only at the end of a string
 
-        [...] ===> Provides a range of value e.g. [a-d] or [A-E]
+        [...] ===> Matches only characters or the range of characters provided (i.e character set)  
+                    e.g. [aef] or [a-d] or [A-E] 
 
         [^...] ===> Matches all characters except those provided in the range. e.g. [^a-f]
 
@@ -95,5 +100,5 @@ print(ourdate)
         (A | B) ===> Match any of the provided regular expressions A or B
 
 """
-oneword = re.findall(r'[a-z]\w{2,5}', string)
+oneword = re.findall(r'\b[a-h]\w+', string)
 print(oneword)
